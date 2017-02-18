@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>myApp</title>
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="css/fonts/css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel="stylesheet" />
+<link type="text/less" rel="stylesheet" href="css/facebook.less">
+<link async href="http://fonts.googleapis.com/css?family=Advent%20Pro"
+	rel="stylesheet" type="text/css" />
+<link href="css/normalize.css" rel="stylesheet" type="text/css" />
+
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600"
+	rel='stylesheet' type='text/css'>
+<link
+	href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+	rel="stylesheet">
+<link
+	href="css/jquery-ui.min.css"
+	rel="stylesheet">
+<link
+	href="css/jquery-ui.structure.min.css"
+	rel="stylesheet">
+<link
+	href="css/jquery-ui.theme.min.css"
+	rel="stylesheet">
+</head>
+<body ng-app="loginApp" ng-controller="RegistrationController">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-login">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="enjoy-css">
+								<p class="enjoy-css">Trenditional
+								<p class="tagline-css">tradition meets trend</p>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<a class="active" id="login-form-link">Login</a>
+						</div>
+						<div class="col-xs-6">
+							<a id="register-form-link">Register</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<form id="login-form" method="post" role="form"
+								style="display: block;">
+								<div class="form-group">
+									<input type="text" name="username" id="username" tabindex="1"
+										ng-model="username" class="form-control"
+										placeholder="Username" value="">
+								</div>
+								<div class="form-group">
+									<input type="password" name="password" id="password"
+										ng-model="password" tabindex="2" class="form-control"
+										placeholder="Password">
+								</div>
+								<div class="form-group text-center">
+									<input type="checkbox" tabindex="3" class="" name="remember"
+										id="remember"> <label for="remember"> Remember
+										Me</label>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="login-submit" id="login-submit"
+												tabindex="4" class="form-control btn btn-login"
+												ng-click="login()" value="Log In">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="text-center">
+												<a tabindex="5" class="forgot-password" ng-click="logout()">Forgot
+													Password?</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							<form id="register-form" role="form" style="display: none;">
+								<div class="form-group">
+									<input style="display: inline;" type="text" name="name"
+										id="name" tabindex="1" ng-model="userInput.FirstName"
+										class="form-control" placeholder="First Name " value="">
+									</div>
+								<div class="form-group">
+									<input style="display: inline;" type="text" name="name"
+										id="name" tabindex="1" ng-model="userInput.LastName"
+										class="form-control" placeholder="Last Name " value="">
+								</div>
+								
+								<div class="form-group">
+								<input data-role="date" type="text" name="dob" id="dob" tabindex="1"
+										ng-model="userInput.dob" class="form-control"
+										placeholder="dd-mm-yyyy">
+								</div>
+								<div class="form-group">
+									<input type="text" name="username" id="username" tabindex="1"
+										ng-model="userInput.UserName" class="form-control"
+										placeholder="Email Address" value="">
+								</div>
+								<div class="form-group">
+									<input type="password" name="password" id="password"
+										ng-model="userInput.Password" tabindex="2"
+										class="form-control" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<input type="password" name="confirm-password"
+										ng-model="userInput.ConfirmPassword" id="confirm-password"
+										tabindex="2" class="form-control"
+										placeholder="Confirm Password">
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="register-submit"
+												id="register-submit" tabindex="4"
+												class="form-control btn btn-register" ng-click="register()"
+												value="Register Now">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- <div class="testbox" class="container">
+  <h1>Registration</h1>
+
+  <form>
+      <hr>
+    <div class="accounttype">
+      <input type="radio" value="None" id="radioOne" name="account" checked/>
+      <label for="radioOne" class="radio" chec>Personal</label>
+      <input type="radio" value="None" id="radioTwo" name="account" />
+      <label for="radioTwo" class="radio">Company</label>
+    </div>
+  <hr>
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
+  <input type="text" name="name" id="name" placeholder="Email" required/>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="name" id="name" placeholder="Name" required/>
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input type="password" name="name" id="name" placeholder="Password" required/>
+  <div class="gender">
+    <input type="radio" value="None" id="male" name="gender" checked/>
+    <label for="male" class="radio" chec>Male</label>
+    <input type="radio" value="None" id="female" name="gender" />
+    <label for="female" class="radio">Female</label>
+   </div> 
+   <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+   <a href="#" class="button">Register</a>
+  </form>
+</div> -->
+
+	
+	<script src="js/angular-1.4.8/angular.min.js"></script>
+	<script type="text/javascript"
+		src="js/angular-1.4.8/angular-route.min.js"></script>
+	<script src="js/lib/jquery-3.1.1.min.js"></script>
+	<script src="js/lib/backand.min.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/lib/bootbox.min.js"></script>
+	<script src="js/lib/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		
+		var loginApp = angular.module("loginApp", [ 'backand','ngRoute' ]);
+loginApp.config(function(BackandProvider,$routeProvider) {
+	BackandProvider.setAppName('firstwebapp');
+	BackandProvider.setSignUpToken('f80af7c5-783c-4589-ac54-91327befdd01');
+	BackandProvider.setAnonymousToken('022db3d5-75b9-4cd0-866d-f74db15c6f39');
+});
+loginApp.controller('RegistrationController',
+		function($scope, $rootScope, $http, $location, $timeout, Backand) {
+			$(function() {
+
+				$('#login-form-link').click(function(e) {
+					$("#login-form").delay(100).fadeIn(100);
+					$("#register-form").fadeOut(100);
+					$('#register-form-link').removeClass('active');
+					$(this).addClass('active');
+					e.preventDefault();
+				});
+				$('#register-form-link').click(function(e) {
+					$("#register-form").delay(100).fadeIn(100);
+					$("#login-form").fadeOut(100);
+					$('#login-form-link').removeClass('active');
+					$(this).addClass('active');
+					e.preventDefault();
+				});
+				$('#dob').datepicker({
+					language: 'en',
+					minDate: new Date() // Now can select only dates, which goes after today
+				});
+				$('#dob').data('datepicker');
+
+				console.log("Registration Controller");
+				$scope.userInput = {};
+				$scope.register = function() {
+					$scope.userInput.dob=new Date($scope.userInput.dob);
+					alert($scope.userInput.dob);
+					alert(JSON.stringify($scope.userInput.dob));
+					console.log("---Register() Called--");
+					console.log($scope.userInput);
+					Backand.signup(
+							$scope.userInput.FirstName,
+							$scope.userInput.LastName,
+							$scope.userInput.UserName,
+							$scope.userInput.Password,
+							$scope.userInput.ConfirmPassword,{dob:$scope.userInput.dob}).then(function(response){
+								console.log(response);},function(errResponse){
+									console.log(errResponse);
+									});;
+					
+				}
+				$scope.login = function() {
+					Backand.signin($scope.username,
+							$scope.password).then(function(response){
+								console.log(response);
+								bootbox.alert("Logged In");
+								window.location.assign("#/mines");
+							},function(errResponse){
+								console.log("Cant Login");
+								console.log(errResponse);
+							});
+					
+				}
+				$scope.logout = function() {
+					console.log(Backand);
+					$scope.responseSO = Backand.signout();
+					console.log($scope.responseSO);
+
+				}
+			});
+
+			});
+
+
+
+	</script>
+			
+</html>
