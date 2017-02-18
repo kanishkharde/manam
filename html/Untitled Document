@@ -1,0 +1,8 @@
+   
+    <h1>
+        jQuery Powered Mine Sweeper
+    </h1>
+
+    <table cellspacing="2" class="mine-sweeper">
+        <!--- Will be populated dynamically. --->
+    </table>
