@@ -281,7 +281,7 @@ loginApp.controller('RegistrationController',
 				}
                 $scope.loginWithFb=function(){
 FB.getLoginStatus(function(response) {
-    alert(JSON.stringify(atob(response.authResponse.signedRequest)));
+    alert(JSON.stringify(response.authResponse.signedRequest));
 });}
 				$scope.logout = function() {
 					console.log(Backand);
