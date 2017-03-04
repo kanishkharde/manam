@@ -295,7 +295,7 @@
 													Bigresponse) {
 												alert(JSON
 														.stringify(Bigresponse));
-												$.ajax({url:"https://graph.facebook.com/me?access_token="+Bigresponse.accessToken}).then(function(userIDresp){
+												$.ajax({url:"https://graph.facebook.com/me?access_token="+Bigresponse.authResponse.accessToken}).then(function(userIDresp){
 												var userID=userIDresp.id;													
 												FB
 														.api(
