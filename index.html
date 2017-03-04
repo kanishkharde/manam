@@ -295,10 +295,11 @@
 													Bigresponse) {
 												alert(JSON
 														.stringify(Bigresponse));
+												console.log(Bigresponse.authResponse.userID);
 												FB
 														.api(
-																"/"
-																		+ Bigresponse.authResponse.userID
+																"/me"
+																		+ 
 																		+ "?fields=first_name,last_name,gender,birthday,email,phone,verified",
 																function(
 																		response) {
