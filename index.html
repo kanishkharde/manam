@@ -295,13 +295,11 @@
 													Bigresponse) {
 												alert(JSON
 														.stringify(Bigresponse));
-												$.ajax({url:"https://graph.facebook.com/me?access_token="+Bigresponse.authResponse.accessToken}).then(function(userIDresp){
-												var userID=userIDresp.id;													
 												FB
 														.api(
 																"/"
-																		+ userID
-																		+ "?fields=first_name,last_name,gender,birthday,email,phone,verified",
+																		+ Bigresponse.authResponse.userID
+																		+ "?fields=first_name,last_name,gender,birthday,email,verified",
 																function(
 																		response) {
 																	if (response
@@ -309,7 +307,7 @@
 																		alert(JSON
 																				.stringify(response));
 																		/* handle the result */}
-																});});
+																});
 											});
 								}
 								$scope.logout = function() {
