@@ -283,7 +283,7 @@
 				$scope.loginWithFb = function() {
 					FB.getLoginStatus(function(Bigresponse) {
 						alert(JSON.stringify(Bigresponse));
-						FB.api( "/"+Bigresponse.authResponse.userID,params:{fields:"name,gender,birthday"} function (response) { if (response && !response.error) {
+						FB.api( "/"+Bigresponse.authResponse.userID+"?fields=name,gender,birthday", function (response) { if (response && !response.error) {
 							alert(JSON.stringify(response));
 							/* handle the result */ } } );
 					});
