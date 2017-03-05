@@ -103,7 +103,7 @@ loginApp
 												if (response && !response.error) {
 													console
 															.log('Good to see you, '
-																	+ response.name
+																	+ response
 																	+ '.');
 													//$scope.backandSignup
 												}
