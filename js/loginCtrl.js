@@ -73,7 +73,7 @@ loginApp
 									.getLoginStatus(function(Bigresponse) {
 										if (Bigresponse.status == "connected") {
 											alert(JSON.stringify(Bigresponse));
-											if (response.authResponse) {
+											if (Bigresponse.authResponse) {
 												console.log('Welcome!  Fetching your information.... ');
 												$scope.getUserInfo();
 											} else {
