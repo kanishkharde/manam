@@ -100,7 +100,7 @@ loginApp
 																}
 															},
 															{
-																scope : 'publish_actions,email,user_likes',
+																scope : 'public_profile,publish_actions,email,user_likes',
 																return_scopes : true
 															});
 										}
