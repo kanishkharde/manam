@@ -73,6 +73,7 @@ loginApp
 							var FBSuccess = false;
 							FB
 									.getLoginStatus(function(Bigresponse) {
+										alert(JSON.stringify(Bigresponse));
 										if (Bigresponse.status == "connected") {
 											alert(JSON.stringify(Bigresponse));
 											if (Bigresponse.authResponse) {
