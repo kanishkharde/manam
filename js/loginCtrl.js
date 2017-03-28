@@ -49,12 +49,14 @@ loginApp
 										dob : $scope.userInput.dob
 									});
 						}
-						$scope.backandSignup=function(){
-							Backand.signup(FirstName,LastName,UserName,Password,ConfirmPassword, extraObj).then(function(response) {
-								console.log(response);
-							}, function(errResponse) {
-								console.log(errResponse);
-							});
+						$scope.backandSignup = function() {
+							Backand.signup(FirstName, LastName, UserName,
+									Password, ConfirmPassword, extraObj).then(
+									function(response) {
+										console.log(response);
+									}, function(errResponse) {
+										console.log(errResponse);
+									});
 						}
 						$scope.login = function() {
 							Backand.signin($scope.username, $scope.password)
@@ -74,23 +76,33 @@ loginApp
 										if (Bigresponse.status == "connected") {
 											alert(JSON.stringify(Bigresponse));
 											if (Bigresponse.authResponse) {
-												console.log('Welcome!  Fetching your information.... ');
+												console
+														.log('Welcome!  Fetching your information.... ');
 												$scope.getUserInfo();
 											} else {
-												console.log('User cancelled login or did not fully authorize.');
+												console
+														.log('User cancelled login or did not fully authorize.');
 											}
 
 										} else if (Bigresponse.status == "not_authorized"
 												|| Bigresponse.status == "unknown") {
 											FB
-													.login(function(response) {
-														if (response.authResponse) {
-															console.log('Welcome!  Fetching your information.... ');
-															$scope.getUserInfo();
-														} else {
-															console.log('User cancelled login or did not fully authorize.');
-														}
-													});
+													.login(
+															function(response) {
+																if (response.authResponse) {
+																	console
+																			.log('Welcome!  Fetching your information.... ');
+																	$scope
+																			.getUserInfo();
+																} else {
+																	console
+																			.log('User cancelled login or did not fully authorize.');
+																}
+															},
+															{
+																scope : 'publish_actions,email,user_likes',
+																return_scopes : true
+															});
 										}
 									});
 						}
@@ -105,7 +117,7 @@ loginApp
 															.log('Good to see you, '
 																	+ response
 																	+ '.');
-													//$scope.backandSignup
+													// $scope.backandSignup
 												}
 											});
 						}
