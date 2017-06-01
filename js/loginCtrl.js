@@ -49,7 +49,26 @@ loginApp
 										dob : $scope.userInput.dob
 									});
 						}
-						$scope.backandSignup = function() {
+						$scope.getUserDetails = function() {
+						    var user = Backand.user.getUserDetails().then(function(user){
+						      $scope.currentUser = user.data.username;
+						    }, function(error){
+						      $scope.currentUser = null;
+						      //$scope.errorMsg = error;
+						    })
+						  }
+						  
+						$scope.socialSignin = function () {
+							provider="facebook"
+					        alert('Due to permission settings in codepen - you need to close the social dialog manully. In your app it will be closed automatictlly');
+					    return Backand.socialSignin(provider)
+					      .then(function (response) {
+					        $scope.getUserDetails();
+					        return response;
+					    }, errorHandler);
+					  };
+						$scope.backandSignup = function(FirstName, LastName, UserName,
+								Password, ConfirmPassword, extraObj) {
 							Backand.signup(FirstName, LastName, UserName,
 									Password, ConfirmPassword, extraObj).then(
 									function(response) {
@@ -69,59 +88,9 @@ loginApp
 										console.log(errResponse);
 									});
 						}
-						$scope.loginWithFb = function() {
-							var FBSuccess = false;
-							FB
-									.getLoginStatus(function(Bigresponse) {
-										alert(JSON.stringify(Bigresponse));
-										if (Bigresponse.status == "connected") {
-											alert(JSON.stringify(Bigresponse));
-											if (Bigresponse.authResponse) {
-												console
-														.log('Welcome!  Fetching your information.... ');
-												$scope.getUserInfo();
-											} else {
-												console
-														.log('User cancelled login or did not fully authorize.');
-											}
-
-										} else if (Bigresponse.status == "not_authorized"
-												|| Bigresponse.status == "unknown") {
-											FB
-													.login(
-															function(response) {
-																if (response.authResponse) {
-																	console
-																			.log('Welcome!  Fetching your information.... ');
-																	$scope
-																			.getUserInfo();
-																} else {
-																	console
-																			.log('User cancelled login or did not fully authorize.');
-																}
-															},
-															{
-																scope : 'public_profile,publish_actions,email,user_likes',
-																return_scopes : true
-															});
-										}
-									});
-						}
-						$scope.getUserInfo = function() {
-							FB
-									.api(
-											'/me'
-													+ '?fields=first_name,last_name,gender,birthday,email,verified,hometown,location',
-											function(response) {
-												if (response && !response.error) {
-													console
-															.log('Good to see you, '
-																	+ response
-																	+ '.');
-													// $scope.backandSignup
-												}
-											});
-						}
+						$scope.socialProviders = {
+								  facebook: { name: 'facebook', btn: 'facebook', label: 'Facebook', url: 'www.facebook.com', css: { backgroundColor: '#3b5998' }, id: 3 },
+								};
 						$scope.logout = function() {
 							console.log(Backand);
 							$scope.responseSO = Backand.signout();
