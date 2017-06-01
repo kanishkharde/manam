@@ -67,6 +67,9 @@ loginApp
 					        return response;
 					    }, errorHandler);
 					  };
+					  var errorHandler=function(error){
+						  console.log(error);
+					  }
 						$scope.backandSignup = function(FirstName, LastName, UserName,
 								Password, ConfirmPassword, extraObj) {
 							Backand.signup(FirstName, LastName, UserName,
