@@ -102,7 +102,7 @@ loginApp.controller('RegistrationController', function($scope, $rootScope,
 		console.log($scope.responseSO);
 
 	}
-	setInterval(function(){
+	/*setInterval(function(){
 		console.log(Backand);
-	},5000);
+	},5000);*/
 });
