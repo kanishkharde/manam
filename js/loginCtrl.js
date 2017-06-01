@@ -44,7 +44,7 @@ loginApp.controller('RegistrationController', function($scope, $rootScope,
 				});
 	}
 	$scope.getUserDetails = function() {
-		var user = Backand.user.getUserDetails().then(function(user) {
+		var user = Backand.getUserDetails().then(function(user) {
 			console.log(user);
 			$scope.currentUser = user.data.username;
 		}, function(error) {
