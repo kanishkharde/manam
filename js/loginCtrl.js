@@ -63,7 +63,8 @@ loginApp
 							provider="facebook"
 					    return Backand.socialSignin(provider)
 					      .then(function (response) {
-					    	  console.log(response)
+					    	  console.log(response);
+					    	  console.log(Backand);
 					        $scope.getUserDetails();
 					        return response;
 					    }, errorHandler);
