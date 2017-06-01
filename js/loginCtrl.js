@@ -60,10 +60,10 @@ loginApp
 						  
 						$scope.socialSignin = function () {
 							provider="facebook"
-					        alert('Due to permission settings in codepen - you need to close the social dialog manully. In your app it will be closed automatictlly');
 					    return Backand.socialSignin(provider)
 					      .then(function (response) {
-					        $scope.getUserDetails();
+					    	  console.log(response)
+					       // $scope.getUserDetails();
 					        return response;
 					    }, errorHandler);
 					  };
