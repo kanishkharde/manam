@@ -51,6 +51,7 @@ loginApp
 						}
 						$scope.getUserDetails = function() {
 						    var user = Backand.user.getUserDetails().then(function(user){
+						    	console.log(user);
 						      $scope.currentUser = user.data.username;
 						    }, function(error){
 						      $scope.currentUser = null;
@@ -63,7 +64,7 @@ loginApp
 					    return Backand.socialSignin(provider)
 					      .then(function (response) {
 					    	  console.log(response)
-					       // $scope.getUserDetails();
+					        $scope.getUserDetails();
 					        return response;
 					    }, errorHandler);
 					  };
