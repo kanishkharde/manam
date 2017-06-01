@@ -81,7 +81,7 @@
 											<div class="col-sm-6 col-sm-offset-3">
 												<input type="submit" name="login-submit" id="login-submit"
 													tabindex="4" class="form-control btn btn-login"
-													ng-click="loginWithFb()" value="Log In with Facebook">
+													ng-click="socialSignin()" value="Log In with Facebook">
 											</div>
 										</div>
 									</div>
@@ -147,41 +147,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-	<!-- <div class="testbox" class="container">
-  <h1>Registration</h1>
-
-  <form>
-      <hr>
-    <div class="accounttype">
-      <input type="radio" value="None" id="radioOne" name="account" checked/>
-      <label for="radioOne" class="radio" chec>Personal</label>
-      <input type="radio" value="None" id="radioTwo" name="account" />
-      <label for="radioTwo" class="radio">Company</label>
-    </div>
-  <hr>
-  <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Email" required/>
-  <label id="icon" for="name"><i class="icon-user"></i></label>
-  <input type="text" name="name" id="name" placeholder="Name" required/>
-  <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="password" name="name" id="name" placeholder="Password" required/>
-  <div class="gender">
-    <input type="radio" value="None" id="male" name="gender" checked/>
-    <label for="male" class="radio" chec>Male</label>
-    <input type="radio" value="None" id="female" name="gender" />
-    <label for="female" class="radio">Female</label>
-   </div> 
-   <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-   <a href="#" class="button">Register</a>
-  </form>
-</div> -->
-
-
 	<script src="js/angular-1.4.8/angular.min.js"></script>
 	<script type="text/javascript"
 		src="js/angular-1.4.8/angular-route.min.js"></script>
@@ -190,28 +155,5 @@
 	<script src="js/lib/bootstrap.min.js"></script>
 	<script src="js/lib/bootbox.min.js"></script>
 	<script src="js/lib/jquery-ui.min.js"></script>
-
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId : '335842836815905',
-				cookie : true,
-				xfbml : true,
-				version : 'v2.8'
-			});
-			FB.AppEvents.logPageView();
-		};
-
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) {
-				return;
-			}
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 	<script src="js/loginCtrl.js" type="text/javascript"></script>
 </html>
