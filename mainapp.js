@@ -5,8 +5,8 @@ app.config(function(BackandProvider,$routeProvider) {
 	BackandProvider.setAnonymousToken('022db3d5-75b9-4cd0-866d-f74db15c6f39');
 
 	$routeProvider.when('/', {
-		templateUrl : 'html/home.html',
-		controller : 'HomeController'
+		templateUrl : 'html/login.html',
+		controller : 'LoginController'
 	}).when('/home', {
 		templateUrl : 'html/home.html',
 		controller : 'HomeController'
