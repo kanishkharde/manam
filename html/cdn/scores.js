@@ -6049,7 +6049,7 @@ var scores = [
     "playerName": "Corey Anderson",
     "balls": "1",
     "match": "MI vs RCB, 14th Match, Indian Premier League, 2018",
-    "catcher": "",
+    "catcher": "Jean-Paul Duminy",
     "wicketFellOnWicket": "4",
     "wicketFell": "yes",
     "team": "Royal Challengers Bangalore",
@@ -6100,7 +6100,7 @@ var scores = [
     "fours": "1",
     "runs": "5",
     "vs": "Mumbai Indians",
-    "wicketKeeper": "",
+    "wicketKeeper": "Aditya Tare",
     "order": 6
   },
   {
