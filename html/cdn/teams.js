@@ -1,3 +1,4 @@
+var latestAppVersion = "1.3.0";
 var teams = [
   {
     "tied": "0",
