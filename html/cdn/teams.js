@@ -25,24 +25,13 @@ var teams = [
   {
     "tied": "0",
     "NR": "0",
-    "lost": "5",
-    "won": "6",
-    "team": "Kings XI Punjab",
-    "matches": "11",
-    "points": "12",
-    "NRR": "-0.056",
-    "order": 2
-  },
-  {
-    "tied": "0",
-    "NR": "0",
     "lost": "6",
     "won": "6",
     "team": "Kolkata Knight Riders",
     "matches": "12",
     "points": "12",
     "NRR": "-0.189",
-    "order": 3
+    "order": 2
   },
   {
     "tied": "0",
@@ -53,6 +42,17 @@ var teams = [
     "matches": "12",
     "points": "12",
     "NRR": "-0.347",
+    "order": 3
+  },
+  {
+    "tied": "0",
+    "NR": "0",
+    "lost": "6",
+    "won": "6",
+    "team": "Kings XI Punjab",
+    "matches": "12",
+    "points": "12",
+    "NRR": "-0.518",
     "order": 4
   },
   {
@@ -70,11 +70,11 @@ var teams = [
     "tied": "0",
     "NR": "0",
     "lost": "7",
-    "won": "4",
+    "won": "5",
     "team": "Royal Challengers Bangalore",
-    "matches": "11",
-    "points": "8",
-    "NRR": "-0.261",
+    "matches": "12",
+    "points": "10",
+    "NRR": "+0.218",
     "order": 6
   },
   {
